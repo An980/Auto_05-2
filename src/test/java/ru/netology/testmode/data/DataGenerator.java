@@ -28,7 +28,7 @@ public class DataGenerator {
     private static void sendRequest(RegistrationDto user) {
         given()
                 .spec(requestSpec)
-                .body(new RegistrationDto("vasya", "password", "active"))
+                .body(user)
                 .when()
                 .post("/api/system/users")
                 .then()
@@ -36,7 +36,7 @@ public class DataGenerator {
     }
 
     public static String getRandomLogin() {
-        String login = faker.name().fullName();
+        String login = faker.name().username();
         return login;
     }
 
@@ -50,8 +50,7 @@ public class DataGenerator {
         }
 
         public static RegistrationDto getUser(String status) {
-            RegistrationDto user = new RegistrationDto(getRandomLogin(), getRandomPassword(), status);
-            return user;
+            return new RegistrationDto(getRandomLogin(), getRandomPassword(), status);
         }
 
         public static RegistrationDto getRegisteredUser(String status) {

@@ -30,6 +30,7 @@ class AuthTest {
         $("[data-test-id='action-login']").click();
         $("[id='root']").shouldHave(Condition.text("Личный кабинет"));
 
+
         // TODO: добавить логику теста, в рамках которого будет выполнена попытка входа в личный кабинет с учётными
         //  данными зарегистрированного активного пользователя, для заполнения полей формы используйте
         //  пользователя registeredUser
@@ -45,13 +46,13 @@ class AuthTest {
         $("[class='notification__content']").shouldHave(Condition.text("Ошибка! Неверно указан логин или пароль"));
     }
 
-    @Test
-    @DisplayName("Should get error message if login with blocked registered user")
-    void shouldGetErrorIfBlockedUser() {
-        var blockedUser = getRegisteredUser("blocked");
-        // TODO: добавить логику теста в рамках которого будет выполнена попытка входа в личный кабинет,
-        //  заблокированного пользователя, для заполнения полей формы используйте пользователя blockedUser
-    }
+//    @Test
+//    @DisplayName("Should get error message if login with blocked registered user")
+//    void shouldGetErrorIfBlockedUser() {
+//        var blockedUser = getRegisteredUser("blocked");
+//        // TODO: добавить логику теста в рамках которого будет выполнена попытка входа в личный кабинет,
+//        //  заблокированного пользователя, для заполнения полей формы используйте пользователя blockedUser
+//    }
 //
 //    @Test
 //    @DisplayName("Should get error message if login with wrong login")
